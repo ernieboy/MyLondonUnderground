@@ -5,16 +5,17 @@ namespace MyLondonUnderground.Domain.Model
     {
         public enum TubeLineColor
         {
-            Blue = 1,
+            LightBlue = 1,
             Red = 2,
             Green = 3,
             Brown = 4,
             Yellow = 5,
             Pink = 6,
             Black = 7,
-            Gray = 8,
+            Grey = 8,
             Orange = 9,
-            Purple = 10
+            Magenta = 10,
+            Turquoise = 11
                 
         }
     }
