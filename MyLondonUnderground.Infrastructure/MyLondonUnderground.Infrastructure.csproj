@@ -1,7 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+	<TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="EntityFramework\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyLondonUnderground.Domain\MyLondonUnderground.Domain.csproj" />
+    <ProjectReference Include="..\..\DotNetCoreToolKit\DotNetCoreToolKit.Library\DotNetCoreToolKit.Library.csproj" />
+  </ItemGroup>
+	<ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.0.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+  </ItemGroup>
 </Project>

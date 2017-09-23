@@ -1,11 +1,12 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using DotNetCoreToolKit.Library.Abstractions;
 using DotNetCoreToolKit.Library.Models.Persistence;
 
 namespace MyLondonUnderground.Domain.Model
 {
-    public class TubeStation : Entity
+    public class TubeLineStation : Entity, IAggregateRoot
     {
-        public TubeStation()
+        public TubeLineStation()
         {
             
         }
@@ -35,6 +36,12 @@ namespace MyLondonUnderground.Domain.Model
         }
 
         public int Position
+        {
+            get;
+            set;
+        }
+
+        public ICollection<TubeLineToTubeLineStationMap> TubeLineToTubeLineStationMaps
         {
             get;
             set;

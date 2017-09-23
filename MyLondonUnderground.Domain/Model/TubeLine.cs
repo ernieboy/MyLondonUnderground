@@ -29,7 +29,7 @@ namespace MyLondonUnderground.Domain.Model
             set;
         }
 
-        public ICollection<TubeStation> Stations
+        public ICollection<TubeLineToTubeLineStationMap> TubeLineToTubeLineStationMaps
         {
             get;
             set;

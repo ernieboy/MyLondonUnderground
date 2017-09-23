@@ -9,5 +9,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
+    <Folder Include="Abstractions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Model\_xxx.cs" />
   </ItemGroup>
 </Project>
