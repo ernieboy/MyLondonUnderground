@@ -23,7 +23,7 @@ namespace MyLondonUnderground.Domain.Model
             set;
         }
 
-        public TubeLineColor Colour
+        public TubeLineColourEnum Colour
         {
             get;
             set;
