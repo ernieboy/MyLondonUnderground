@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using MediatR;
 using MyLondonUnderground.Application.CommandHandlers;
@@ -9,6 +10,7 @@ using MyLondonUnderground.Domain.Model;
 using MyLondonUnderground.Infrastructure.EntityFramework;
 using MyLondonUnderground.QueryStack.Implementations;
 using StructureMap;
+using MyLondonUnderground.Application.Scaffolding;
 
 namespace MyLondonUnderground.Admin
 {
@@ -25,7 +27,8 @@ namespace MyLondonUnderground.Admin
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            
+            services.AddDbContext<ScaffoldingContext>(options =>
+                options.UseSqlite(_configuration.GetConnectionString("DefaultConnection")));
 
             services.AddMvc();
             return ConfigureIoc(services);
