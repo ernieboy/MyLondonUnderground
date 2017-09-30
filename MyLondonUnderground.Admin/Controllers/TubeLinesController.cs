@@ -1,27 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MyLondonUnderground.Application.Commands;
 using MyLondonUnderground.Application.Scaffolding;
+using MediatR;
+using MyLondonUnderground.QueryStack.ViewModels;
 
 namespace MyLondonUnderground.Admin.Controllers
 {
     public class TubeLinesController : Controller
     {
         private readonly ScaffoldingContext _context;
+        private IMediator _mediatr; 
 
-        public TubeLinesController(ScaffoldingContext context)
+        public TubeLinesController(ScaffoldingContext context, IMediator mediatr)
         {
             _context = context;
+            _mediatr = mediatr;
         }
 
         // GET: TubeLines
         public async Task<IActionResult> Index()
         {
+            var listCommand = new ListTubeLinesCommand { };
+            var items = await _mediatr.Send(listCommand);
             return View(await _context.AddNewTubeLineCommand.ToListAsync());
         }
 
