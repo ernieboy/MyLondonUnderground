@@ -19,6 +19,7 @@ namespace MyLondonUnderground.Application.CommandHandlers
 
         public Task<ICollection<TubeLinesListingViewModel>> Handle(ListTubeLinesCommand message)
         {
+            //Validation!!!
             throw new System.NotImplementedException();
         }
     }
