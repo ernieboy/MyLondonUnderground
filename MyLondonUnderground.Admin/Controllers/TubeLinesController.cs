@@ -60,6 +60,10 @@ namespace MyLondonUnderground.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                var command = new AddNewTubeLineCommand {Name = null, Description = null };
+                await _mediatr.Send(command);
+
+
                 _context.Add(addNewTubeLineCommand);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

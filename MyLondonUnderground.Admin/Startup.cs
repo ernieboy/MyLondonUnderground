@@ -11,6 +11,7 @@ using MyLondonUnderground.Infrastructure.EntityFramework;
 using MyLondonUnderground.QueryStack.Implementations;
 using StructureMap;
 using MyLondonUnderground.Application.Scaffolding;
+using FluentValidation;
 
 namespace MyLondonUnderground.Admin
 {
@@ -55,6 +56,8 @@ namespace MyLondonUnderground.Admin
                     _.ConnectImplementationsToTypesClosing(typeof(IAsyncRequestHandler<,>)); // Async Handlers with a response
                     _.ConnectImplementationsToTypesClosing(typeof(INotificationHandler<>));
                     _.ConnectImplementationsToTypesClosing(typeof(IAsyncNotificationHandler<>));
+
+                    _.ConnectImplementationsToTypesClosing(typeof(AbstractValidator<>));
 
                     //_.AddAllTypesOf<IGamingService>();
                     //_.ConnectImplementationsToTypesClosing(typeof(IValidator<>));

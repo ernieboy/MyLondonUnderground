@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MyLondonUnderground.Application.Commands
 {
-    public abstract class BaseCommand : INotification
+    public abstract class BaseCommand 
     {
         /// <summary>
         /// Needed by EF when scaffolding

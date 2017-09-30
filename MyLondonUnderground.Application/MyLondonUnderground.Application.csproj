@@ -7,10 +7,10 @@
   <ItemGroup>
     <Folder Include="DomainEventHandlers\" />
     <Folder Include="IntegrationEventHandlers\" />
-    <Folder Include="Validation\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="7.1.1" />
     <PackageReference Include="MediatR" Version="3.0.1" />
   </ItemGroup>
 

@@ -1,6 +1,8 @@
-﻿namespace MyLondonUnderground.Application.Commands
+﻿using MediatR;
+
+namespace MyLondonUnderground.Application.Commands
 {
-    public class AddNewTubeLineCommand : BaseCommand
+    public class AddNewTubeLineCommand : BaseCommand, IRequest
     {
         public string Name { get; set; }
 
